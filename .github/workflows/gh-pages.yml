@@ -21,6 +21,14 @@ jobs:
         run: rm -rf .git/
       - name: Move Template to parent directory
         run: mv obsidian-reveal-template/{,.[^.]}* .
+      - name: Delete old .git folder
+        run: rm -rf .git/
+      - name: Delete old configuration
+        run: rm -rf reveal-md.json
+      - name: Checkout configuration
+        run: git clone https://mszturc:${{ secrets.ACCESS_TOKEN }}@github.com/mszturc/slides
+      - name: Move configuration to parent directory
+        run: slides/* .
       - name: Print folder structure
         run: ls -la
       - name: Print folder structure

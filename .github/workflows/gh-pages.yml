@@ -17,8 +17,12 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
       - name: Checkout Obsidian Reveal Template
         run: git clone https://mszturc:${{ secrets.ACCESS_TOKEN }}@github.com/mszturc/obsidian-reveal-template
+      - name: Allow to move hidden files
+        run: shopt -s dotglob 
       - name: Move Template to parent directory
-        run : mv obsidian-reveal-template/* .
+        run: mv obsidian-reveal-template/* .
+      - name: Print folder structure
+        run: ls
       - uses: actions/setup-node@v2
         with:
           node-version: '17'
@@ -26,7 +30,5 @@ jobs:
         run: npm install -g yarn
       - name: Setup reveal-md
         run: npm install -g mszturc/reveal-md
-      - name: Print folder structure
-        run: ls
       - name: Generate Slides
         run: reveal-md ./ -w --glob 'deck-*.md' --static public

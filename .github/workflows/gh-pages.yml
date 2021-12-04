@@ -20,7 +20,7 @@ jobs:
       - name: Allow to move hidden files
         run: shopt -s dotglob 
       - name: Move Template to parent directory
-        run: mv obsidian-reveal-template/* .
+        run: mv obsidian-reveal-template/{,.[^.]}* .
       - name: Print folder structure
         run: ls -la
       - name: Print folder structure

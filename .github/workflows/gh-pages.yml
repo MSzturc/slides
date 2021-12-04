@@ -20,5 +20,9 @@ jobs:
           node-version: '17'
       - name: Setup yarn
         run: npm install -g yarn
+      - name: Setup reveal-md
+        run: npm install -g mszturc/reveal-md
       - name: Print folder structure
         run: ls
+      - name: Test reveal
+        run: reveal-md

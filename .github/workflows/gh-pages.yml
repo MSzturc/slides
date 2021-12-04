@@ -17,8 +17,8 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
       - name: Checkout Obsidian Reveal Template
         run: git clone https://mszturc:${{ secrets.ACCESS_TOKEN }}@github.com/mszturc/obsidian-reveal-template
-      - name: Allow to move hidden files
-        run: shopt -s dotglob 
+      - name: Delete old .git folder
+        run: rm -rf .git/
       - name: Move Template to parent directory
         run: mv obsidian-reveal-template/{,.[^.]}* .
       - name: Print folder structure

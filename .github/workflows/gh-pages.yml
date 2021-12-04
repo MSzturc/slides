@@ -17,6 +17,8 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
       - name: Checkout Obsidian Reveal Template
         run: git clone https://mszturc:${{ secrets.ACCESS_TOKEN }}@github.com/mszturc/obsidian-reveal-template
+      - name: Move Template to parent directory
+        run : mv obsidian-reveal-template/* .
       - uses: actions/setup-node@v2
         with:
           node-version: '17'

@@ -16,10 +16,7 @@ jobs:
           repository: mszturc/notes
           token: ${{ secrets.ACCESS_TOKEN }}
       - name: Checkout Obsidian Reveal Template
-        uses: actions/checkout@v2
-        with:
-          repository: mszturc/obsidian-reveal-template
-          token: ${{ secrets.ACCESS_TOKEN }}
+        run: git clone https://mszturc:${{ secrets.ACCESS_TOKEN }}@github.com/mszturc/obsidian-reveal-template
       - uses: actions/setup-node@v2
         with:
           node-version: '17'

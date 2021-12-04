@@ -1,7 +1,6 @@
 {
     "theme": ".reveal-md/mattropolis.css",
     "highlightTheme": "vs2015",
-    "staticDirs": "Media",
     "separator": "\n---\n",
     "verticalSeparator": "\n--\n",
     "preprocessor": ".reveal-md/include.js"

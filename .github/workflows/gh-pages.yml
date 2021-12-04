@@ -22,7 +22,7 @@ jobs:
       - name: Move Template to parent directory
         run: mv obsidian-reveal-template/* .
       - name: Print folder structure
-        run: ls
+        run: ls -la
       - uses: actions/setup-node@v2
         with:
           node-version: '17'

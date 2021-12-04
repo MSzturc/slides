@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: mszturc/notes
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          token: ${{ github.token }}

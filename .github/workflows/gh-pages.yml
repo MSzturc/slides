@@ -29,10 +29,8 @@ jobs:
         run: git clone https://mszturc:${{ secrets.ACCESS_TOKEN }}@github.com/mszturc/slides
       - name: Move configuration to parent directory
         run: mv slides/* .
-      - name: Print folder structure
-        run: ls -la
-      - name: Print folder structure
-        run: ls -la obsidian-reveal-template/
+      - name: Create obsidian configuration folder
+        run: mkdir .obsidian
       - uses: actions/setup-node@v2
         with:
           node-version: '17'

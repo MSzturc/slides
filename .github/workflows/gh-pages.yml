@@ -10,7 +10,17 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Notes
+        uses: actions/checkout@v2
         with:
           repository: mszturc/notes
           token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Setup Nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+            - name: Setup yarn
+      - name: Setup yarn
+        run: npm install -g yarn
+      - name: Print folder structure
+        run: ls
